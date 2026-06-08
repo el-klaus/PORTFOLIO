@@ -18,7 +18,7 @@ const Introduction = () => {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className='font-bold lg:text-6xl text-4xl '
+          className='font-bold lg:text-6xl text-4xl text-orange-500 inline-block border-b-4 border-orange-500/20 uppercase'
         >
           Introduction
         </motion.h2>

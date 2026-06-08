@@ -28,6 +28,7 @@ const App = () => {
             justify-center
             gap-16
             px-6 lg:px-12
+            pb-24 md:pb-32
           "
         >
 
@@ -42,6 +43,7 @@ const App = () => {
               border border-orange-500/20
               rounded-3xl
               p-6
+              order-2 max-lg:order-1
               shadow-xl
               hover:shadow-orange-500/20
               hover:-translate-y-2
@@ -77,7 +79,7 @@ const App = () => {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-2xl"
+            className="max-w-2xl pt-20 lg:pt-0"
           >
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight">
               My{" "}

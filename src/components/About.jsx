@@ -28,7 +28,7 @@ const About = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className='flex w-screen max-lg:flex-col'
+        className='flex w-screen max-lg:flex-col '
       >
         {[1,2,3].map((i) => (
           <motion.img
@@ -52,7 +52,7 @@ const About = () => {
 
         {/* ABOUT */}
         <motion.div variants={item} className='lg:w-1/3 flex flex-col gap-4'>
-          <h2 className='font-bold text-4xl'>ABOUT ME</h2>
+          <h2 className='font-bold text-4xl '>ABOUT ME</h2>
           <p>
             I'm a web developer and an entrepreneur with a passion for building both digital
             and physical products. I specialize in creating responsive, user-friendly web applications,
