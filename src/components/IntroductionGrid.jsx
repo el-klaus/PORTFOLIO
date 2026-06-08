@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 const Introduction = () => {
 
   return (
-    <main className='flex max-lg:flex-col justify-between text-white pt-30 px-10 border-t-2 border-gray-700 gap-8 py-8 lg:m-20 '>
+    <main className='grid lg:grid-cols-2 justify-between text-white pt-30 px-10 border-t-2 border-gray-700 gap-8 py-8 lg:m-20 '>
 
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -77,7 +77,7 @@ const Introduction = () => {
         <img
           src="/background.jpg"
           alt="introduction"
-          className='lg:h-full rounded-xl hover:scale-105 transition duration-500'
+          className='lg:h-full  rounded-xl hover:scale-105 transition duration-500 '
         />
       </motion.div>
 

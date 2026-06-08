@@ -1,12 +1,12 @@
-import React from 'react'
-import Button from '@mui/material/Button'
-import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
-import { Link } from "react-router-dom";
+import React from "react";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 const Navbar = () => {
-
   const [anchorEl, setAnchorEl] = React.useState(null);
+
   const open = Boolean(anchorEl);
 
   const handleClick = (event) => {
@@ -17,41 +17,168 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const menuItemStyle = {
+    color: "#f97316",
+    borderRadius: "12px",
+    marginBottom: "6px",
+    transition: "all 0.3s ease",
+
+    "&:hover": {
+      backgroundColor: "rgba(249,115,22,0.08)",
+      border: "1px solid rgba(249,115,22,0.5)",
+      color: "#ffffff",
+      transform: "translateX(5px)",
+    },
+  };
+
   return (
-    <main className='fixed top-0 left-0 w-full z-50 border-b-2 bg-gray-950 text-gray-400 flex justify-between items-center p-4'>      
-        <div>
-            <Link to="/" className='font-medium pl-4 text-md hover:text-white'>
-                James Nicholas
-            </Link>
+    <nav
+      className="
+        fixed
+        top-0
+        left-0
+        w-full
+        z-50
+        bg-black/70
+        backdrop-blur-md
+        border-b
+        border-orange-500/20
+      "
+    >
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        {/* Logo */}
+        <a
+          href="#home"
+          className="
+            text-xl
+            md:text-2xl
+            font-bold
+            uppercase
+            text-orange-500
+            hover:text-orange-400
+            transition
+          "
+        >
+          James Nicholas
+        </a>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-10 text-white font-medium">
+          <a
+            href="#home"
+            className="hover:text-orange-500 transition duration-300"
+          >
+            Home
+          </a>
+
+          <a
+            href="#about"
+            className="hover:text-orange-500 transition duration-300"
+          >
+            About
+          </a>
+
+          <a
+            href="#projects"
+            className="hover:text-orange-500 transition duration-300"
+          >
+            Projects
+          </a>
+
+          <a
+            href="#contact"
+            className="hover:text-orange-500 transition duration-300"
+          >
+            Contact
+          </a>
         </div>
 
-        <div className='hidden md:flex gap-10 pr-8 '> 
-            <Link to="/" className='hover:text-white transition'>Home</Link>
-            <Link to="/contact" className='hover:text-white transition'>Contact</Link>
-            <Link to="/project" className='hover:text-white transition'>Project</Link>
-            <Link to="/about" className='hover:text-white transition'>About</Link>
-        </div>
+        {/* Mobile Navigation */}
+        <div className="md:hidden">
+          <Button
+            onClick={handleClick}
+            sx={{
+              minWidth: 0,
+              padding: 0,
+              color: "#f97316",
+            }}
+          >
+            <HiOutlineMenuAlt3 size={32} />
+          </Button>
 
-        <div className='block md:hidden'>
-            <Button variant="contained" onClick={handleClick}>
-                Menu
-            </Button>
+          <Menu
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "right",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            PaperProps={{
+              sx: {
+                mt: 1.5,
+                minWidth: 230,
 
-            <Menu
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
+                background: "rgba(0,0,0,0.55)",
+
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+
+                border: "1px solid rgba(249,115,22,0.2)",
+
+                borderRadius: "20px",
+
+                padding: "10px",
+
+                boxShadow:
+                  "0 8px 32px rgba(249,115,22,0.15)",
+              },
+            }}
+          >
+            <MenuItem
+              component="a"
+              href="#home"
+              onClick={handleClose}
+              sx={menuItemStyle}
             >
-                <MenuItem onClick={handleClose}>Home</MenuItem>
-                <MenuItem onClick={handleClose}>About</MenuItem>
-                <MenuItem onClick={handleClose}>Project</MenuItem>
-                <MenuItem onClick={handleClose}>Contact</MenuItem>
+              Home
+            </MenuItem>
 
-            </Menu>
+            <MenuItem
+              component="a"
+              href="#about"
+              onClick={handleClose}
+              sx={menuItemStyle}
+            >
+              About
+            </MenuItem>
+
+            <MenuItem
+              component="a"
+              href="#projects"
+              onClick={handleClose}
+              sx={menuItemStyle}
+            >
+              Projects
+            </MenuItem>
+
+            <MenuItem
+              component="a"
+              href="#contact"
+              onClick={handleClose}
+              sx={menuItemStyle}
+            >
+              Contact
+            </MenuItem>
+          </Menu>
         </div>
+      </div>
+    </nav>
+  );
+};
 
-    </main>
-  )
-}
-
-export default Navbar
+export default Navbar;
