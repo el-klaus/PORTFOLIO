@@ -7,6 +7,12 @@ import Contact from "./components/Contact";
 import Project from "./components/Project";
 
 const App = () => {
+  // Reusable animation configuration for section scroll-reveals
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 80 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+  };
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-black text-white">
 
@@ -19,17 +25,7 @@ const App = () => {
         {/* HERO SECTION */}
         <section
           id="home"
-          className="
-            max-w-7xl mx-auto
-            min-h-screen
-            flex
-            max-lg:flex-col
-            items-center
-            justify-center
-            gap-16
-            px-6 lg:px-12
-            pb-24 md:pb-32
-          "
+          className="max-w-7xl mx-auto min-h-screen flex max-lg:flex-col items-center justify-center gap-16 px-6 lg:px-12 pb-24 md:pb-32"
         >
 
           {/* IMAGE CARD */}
@@ -37,36 +33,19 @@ const App = () => {
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="
-              bg-white/5
-              backdrop-blur-md
-              border border-orange-500/20
-              rounded-3xl
-              p-6
-              order-2 max-lg:order-1
-              shadow-xl
-              hover:shadow-orange-500/20
-              hover:-translate-y-2
-              transition-all duration-500
-            "
+            className="bg-white/5 backdrop-blur-md border border-orange-500/20 rounded-3xl p-6 order-2 max-lg:order-1 shadow-xl hover:shadow-orange-500/20 hover:-translate-y-2 transition-all duration-500"
           >
             <div className="flex flex-col items-center gap-6">
               <img
                 src="/background.jpg"
                 alt="James Nicholas"
-                className="
-                  h-72 w-72
-                  object-cover
-                  rounded-2xl
-                  border-2 border-orange-500/30
-                "
+                className="h-72 w-72 object-cover rounded-2xl border-2 border-orange-500/30"
               />
 
               <div className="text-center">
                 <h2 className="text-2xl font-bold uppercase">
                   James Nicholas Chidiebere
                 </h2>
-
                 <p className="text-orange-500 font-semibold mt-2">
                   Full Stack Web Developer
                 </p>
@@ -82,8 +61,7 @@ const App = () => {
             className="max-w-2xl pt-20 lg:pt-0"
           >
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight">
-              My{" "}
-              <span className="text-orange-500">Portfolio</span>
+              My <span className="text-orange-500">Portfolio</span>
             </h1>
 
             <p className="text-lg text-gray-300 mt-8 leading-relaxed">
@@ -92,23 +70,10 @@ const App = () => {
 
             {/* TECH STACK */}
             <div className="flex flex-wrap gap-3 mt-8">
-              {[
-                "React",
-                "Next.js",
-                "Firebase",
-                "Tailwind CSS",
-                "JavaScript",
-                "Node.js",
-              ].map((tech) => (
+              {["React", "Next.js", "Firebase", "Tailwind CSS", "JavaScript", "Node.js"].map((tech) => (
                 <span
                   key={tech}
-                  className="
-                    px-4 py-2
-                    rounded-full
-                    bg-orange-600/10
-                    border border-orange-500/20
-                    text-sm
-                  "
+                  className="px-4 py-2 rounded-full bg-orange-600/10 border border-orange-500/20 text-sm"
                 >
                   {tech}
                 </span>
@@ -117,82 +82,39 @@ const App = () => {
 
             {/* BUTTONS */}
             <div className="flex flex-wrap gap-4 mt-10">
-              <a
-                href="#projects"
-                className="
-                  bg-orange-600 hover:bg-orange-500
-                  px-8 py-3
-                  rounded-xl
-                  font-semibold
-                  transition
-                "
-              >
+              <a href="#projects" className="bg-orange-600 hover:bg-orange-500 px-8 py-3 rounded-xl font-semibold transition">
                 View Projects
               </a>
-
-              <a
-                href="#contact"
-                className="
-                  border border-orange-500
-                  hover:bg-orange-600/10
-                  px-8 py-3
-                  rounded-xl
-                  font-semibold
-                  transition
-                "
-              >
+              <a href="#contact" className="border border-orange-500 hover:bg-orange-600/10 px-8 py-3 rounded-xl font-semibold transition">
                 Contact Me
               </a>
             </div>
           </motion.div>
         </section>
 
-        {/* INTRODUCTION */}
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <Introduction />
-        </motion.div>
-
-        {/* ABOUT */}
-        <motion.div
-          id="about"
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <About />
-        </motion.div>
-
-        {/* PROJECTS */}
-        <motion.div
-          id="projects"
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <Project />
-        </motion.div>
-
-        {/* CONTACT */}
-        <motion.div
-          id="contact"
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <Contact />
-        </motion.div>
+        {/* INNER SECTIONS COMPACT VIEWPORT LOGIC */}
+        {/* Note: Wrapped remaining portfolio pieces into a clean layout structure */}
+        {[
+          { id: "introduction", component: <Introduction /> },
+          { id: "about", component: <About /> },
+          { id: "projects", component: <Project /> },
+          { id: "contact", component: <Contact /> }
+        ].map(({ id, component }) => (
+          <motion.div
+            key={id}
+            id={id}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUpVariants}
+          >
+            {component}
+          </motion.div>
+        ))}
 
         {/* FOOTER */}
         <footer className="border-t border-orange-500/10 py-10 text-center text-gray-400">
-          <p>© 2024 James Nicholas Chidiebere.</p>
+          <p>© {new Date().getFullYear()} James Nicholas Chidiebere.</p>
           <p className="mt-2 text-sm">
             Built with React, Tailwind CSS & Framer Motion.
           </p>
