@@ -16,7 +16,7 @@ const companyProjects = [
 ];
 
 const webProjects = [
-  { id: 1, image: "/bg.jpg", title: "Portfolio Website", link: "https://yourportfolio.com", tag: "portfolio" },
+  { id: 1, image: "/portfolio.png", title: "Portfolio Website", link: "https://elklausconnet.vercel.app/", tag: "portfolio" },
   { id: 2, image: "/prestige.png", title: "Banking Website", link: "https://prestigetrustbank-rho.vercel.app", tag: "Banking" },
   { id: 3, image: "/tsacademy.png", title: "project Website", link: "https://project-223b.vercel.app", tag: "ts-project" },
   { id: 4, image: "/consignment.png", title: "Consignment Website", link: "https://prestigetrustbank-rho.vercel.app", tag: "consignment" },
