@@ -75,7 +75,7 @@ const Introduction = () => {
         className='overflow-hidden rounded-xl'
       >
         <img
-          src="/background.jpg"
+          src="/first.jpg"
           alt="introduction"
           className='lg:h-full  rounded-xl hover:scale-105 transition duration-500 '
         />

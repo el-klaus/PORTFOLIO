@@ -2,18 +2,25 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const companyProjects = [
-  { id: 1, image: "/bg.jpg", title: "Asset Alliance", tag: "Fintech" },
-  { id: 2, image: "/bg.jpg", title: "Investment Dashboard", tag: "Dashboard" },
-  { id: 3, image: "/bg.jpg", title: "Admin Panel", tag: "Internal Tool" },
-  { id: 4, image: "/bg.jpg", title: "Referral System", tag: "Marketing" },
-  { id: 5, image: "/bg.jpg", title: "User Management", tag: "Security" },
-  { id: 6, image: "/bg.jpg", title: "Analytics Dashboard", tag: "Data Analysis" },
+  { id: 1, image: "/DOLICE.jpg", title: "Dolice White", tag: "T-shirts" },
+  { id: 2, image: "/hoodie.jpg", title: "Elklaus-connet Hoodie", tag: "El-Hoodies" },
+  { id: 3, image: "/bg.jpg", title: "Bro 4 Life T-Shirt", tag: "T-Shirts" },
+  { id: 4, image: "/SNIPPER.jpg", title: "Kaptin Snipper T-Shirt", tag: "T-Shirts" },
+  { id: 5, image: "/montana.jpg", title: "Montana T-Shirt", tag: "T-Shirts" },
+  { id: 6, image: "/1112.jpg", title: "Starboy", tag: "T-Shirts" },
+  { id: 7, image: "/1803 UPDATE.jpg", title: "1803 Blackpast", tag: "T-Shirts" },
+  { id: 8, image: "/CONNET UPDATE.jpg", title: "Connet", tag: "T-Shirts" },
+  { id: 9, image: "/DOLICE1.jpg", title: "Dolice Black", tag: "T-Shirts" },
+  { id: 10, image: "/bg.jpg", title: "Task Automation", tag: "Productivity" },
+
 ];
 
 const webProjects = [
-  { id: 1, image: "/bg.jpg", title: "Portfolio Website", link: "https://yourportfolio.com", tag: "Creative" },
-  { id: 2, image: "/bg.jpg", title: "E-Commerce Website", link: "https://yourecommerce.com", tag: "E-Com" },
-  { id: 3, image: "/bg.jpg", title: "Restaurant Website", link: "https://restaurantdemo.com", tag: "Business" },
+  { id: 1, image: "/bg.jpg", title: "Portfolio Website", link: "https://yourportfolio.com", tag: "portfolio" },
+  { id: 2, image: "/prestige.png", title: "Banking Website", link: "https://prestigetrustbank-rho.vercel.app", tag: "Banking" },
+  { id: 3, image: "/tsacademy.png", title: "project Website", link: "https://project-223b.vercel.app", tag: "ts-project" },
+  { id: 4, image: "/consignment.png", title: "Consignment Website", link: "https://prestigetrustbank-rho.vercel.app", tag: "consignment" },
+  { id: 5, image: "/asset.png", title: "Broker Website", link: "https://asset-alliance-inky.vercel.app", tag: "broker" },
 ];
 
 // Motion Animation Configs
@@ -35,11 +42,11 @@ const Project = () => {
   const [activeTab, setActiveTab] = useState("elklaus"); // Options: "elklaus" or "web"
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black text-white px-6 py-24">
+    <section className="relative min-h-screen overflow-hidden bg-linear-to-b from-black via-zinc-950 to-black text-white px-6 py-24">
       
       {/* Dynamic Background Glow Rings */}
-      <div className="absolute top-1/4 left-1/10 w-[500px] h-[500px] bg-orange-600/5 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/10 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/10 w-125 h-125 bg-orange-600/5 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/10 w-125 h-125 bg-orange-500/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         
@@ -51,7 +58,7 @@ const Project = () => {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6"
           >
-            My Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">Projects</span>
+            My Featured <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">Projects</span>
           </motion.h1>
 
           <motion.p 
@@ -88,7 +95,7 @@ const Project = () => {
         </div>
 
         {/* Dynamic Project Panels Grid */}
-        <div className="min-h-[500px]">
+        <div className="min-h-125">
           <AnimatePresence mode="wait">
             {activeTab === "elklaus" && (
               <motion.div
@@ -112,7 +119,7 @@ const Project = () => {
                         alt={project.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-80" />
+                      <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-80" />
                       <span className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-orange-400 text-xs px-3 py-1 rounded-full border border-orange-500/20 font-medium">
                         {project.tag}
                       </span>
@@ -150,7 +157,7 @@ const Project = () => {
                         alt={project.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-80" />
+                      <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-transparent to-transparent opacity-80" />
                       <span className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-orange-400 text-xs px-3 py-1 rounded-full border border-orange-500/20 font-medium">
                         {project.tag}
                       </span>

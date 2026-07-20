@@ -29,12 +29,12 @@ const Contact = () => {
               "
             >
               <img
-                src="/background.jpg"
+                src="/klausphoto.png"
                 alt="James Nicholas"
                 className="
                   w-full
                   max-w-md
-                  h-[500px]
+                  h-125
                   object-cover
                   hover:scale-105
                   transition-all
@@ -76,7 +76,7 @@ const Contact = () => {
 
               <div className="flex items-center gap-4">
                 <TbWorldWww className="text-orange-500 text-2xl" />
-                <span>www.jamesnicholaschidiebere.com</span>
+                <span>www.elklausconnet.vercel.app</span>
               </div>
 
               <div className="flex items-center gap-4">

@@ -30,15 +30,24 @@ const About = () => {
         viewport={{ once: true }}
         className='flex w-screen max-lg:flex-col '
       >
-        {[1,2,3].map((i) => (
-          <motion.img
-            key={i}
-            variants={item}
-            src="/background.jpg"
-            alt="about"
-            className='lg:w-1/3 p-3 rounded-md hover:scale-105 transition duration-500'
-          />
-        ))}
+        <motion.img
+          variants={item}
+          src="/fifth.jpg"
+          alt="about"
+          className='lg:w-1/3 p-3 rounded-md hover:scale-105 transition duration-500'
+        />
+        <motion.img
+          variants={item}
+          src="/bg.jpg"
+          alt="about"
+          className='lg:w-1/3 p-3 rounded-md hover:scale-105 transition duration-500'
+        />
+        <motion.img
+          variants={item}
+          src="/sixth.jpg"
+          alt="about"
+          className='lg:w-1/3 p-3 rounded-md hover:scale-105 transition duration-500'
+        />
       </motion.div>
 
       {/* TEXT SECTION */}
